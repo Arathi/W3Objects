@@ -2,15 +2,19 @@
 #include <fstream>
 
 #include "SylkRecord.h"
+#include "SylkFile.h"
 
 using namespace std;
 
-#define SYLKRECORD_UNIT
+//#define SYLKRECORD_UNIT
+#define SYLKFILE_UNIT
 
 int main()
 {
 #ifdef SYLKFILE_UNIT
     SylkFile slk("D:\\TestDir\\mpq\\Units\\AbilityData.slk");
+    slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.slk");
+    //slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.comp.slk", true);
 #endif
 #ifdef SYLKRECORD_UNIT
     SylkRecord record;

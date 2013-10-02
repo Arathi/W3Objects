@@ -7,6 +7,6 @@
 using namespace std;
 
 int str2int(string strvalue);
-int int2str(int value);
+string int2str(int value);
 
 #endif // UTILS_H_INCLUDED

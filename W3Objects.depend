@@ -50,10 +50,10 @@
 
 1380624284 d:\workspace\w3objects\src\textfile.h
 
-1380692888 source:d:\workspace\w3objects\src\utils.cpp
+1380727739 source:d:\workspace\w3objects\src\utils.cpp
 	"Utils.h"
 
-1380646926 d:\workspace\w3objects\src\utils.h
+1380733854 d:\workspace\w3objects\src\utils.h
 	<sstream>
 	<iostream>
 
@@ -67,10 +67,10 @@
 
 1380629255 d:\workspace\w3objects\src\w3object.h
 
-1380694317 source:d:\workspace\w3objects\src\sylkfile.cpp
+1380735035 source:d:\workspace\w3objects\src\sylkfile.cpp
 	"SylkFile.h"
 
-1380694147 d:\workspace\w3objects\src\sylkfile.h
+1380725691 d:\workspace\w3objects\src\sylkfile.h
 	<vector>
 	<map>
 	<string>
@@ -78,15 +78,15 @@
 	<fstream>
 	"SylkRecord.h"
 
-1380692517 d:\workspace\w3objects\src\sylkrecord.h
+1380727225 d:\workspace\w3objects\src\sylkrecord.h
 	<vector>
 	<iostream>
 	"Utils.h"
 
-1380692914 source:d:\workspace\w3objects\src\sylkrecord.cpp
+1380735476 source:d:\workspace\w3objects\src\sylkrecord.cpp
 	"SylkRecord.h"
 
-1380693465 source:d:\workspace\w3objects\src\w3omain.cpp
+1380734408 source:d:\workspace\w3objects\src\w3omain.cpp
 	<iostream>
 	<fstream>
 	"SylkRecord.h"

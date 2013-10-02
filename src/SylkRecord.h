@@ -38,9 +38,12 @@ public:
     string test_y();
 
     string get_value();
+    string get_value_with_quote();
     void set_value(string value);
 
     void parser(string);
+    void copy_param(SylkRecord record);
+    string to_string();
 
 protected:
 private:

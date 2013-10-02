@@ -6,11 +6,15 @@ int str2int(string strvalue)
     stringstream sstream;
     sstream<<strvalue;
     sstream>>value;
-    clog<<strvalue<<" -> "<<value<<endl;
+    //clog<<" "<<strvalue<<" -> "<<value<<endl;
     return value;
 }
 
-int int2str(int value)
+string int2str(int value)
 {
-
+    string ret="";
+    stringstream sstream;
+    sstream<<value;
+    sstream>>ret;
+    return ret;
 }

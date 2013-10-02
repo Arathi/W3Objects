@@ -6,6 +6,7 @@ SylkRecord::SylkRecord()
     _type=kSylkRecordTypeNull;
     _x_setFlag=false;
     _y_setFlag=false;
+    _value_stringFlag=false;
     _x=0;
     _y=0;
     _value="";
@@ -52,12 +53,22 @@ void SylkRecord::set_value(string value)
     }
     else
     {
+        //_value_stringFlag=false;
         _value=value;
     }
 }
 
 string SylkRecord::get_value()
 {
+    return _value;
+}
+
+string SylkRecord::get_value_with_quote()
+{
+    if (_value_stringFlag)
+    {
+        return "\""+_value+"\"";
+    }
     return _value;
 }
 
@@ -84,7 +95,7 @@ void SylkRecord::parser(string line)
     //首先，插入第一个检查点
     if (line_length>0)
     {
-        clog<<"插入位置0"<<endl;
+        //clog<<"插入位置0"<<endl;
         linesplit.push_back(0);
     }
     else
@@ -94,21 +105,21 @@ void SylkRecord::parser(string line)
     while (last!=string::npos)
     {
         semicolon_index = line.find(';', last+1);
-        clog<<"查找\";\": ";
+        //clog<<"查找\";\": ";
         if (semicolon_index != string::npos)
         {
-            clog<<"index="<<semicolon_index;
+            //clog<<"index="<<semicolon_index;
             linesplit.push_back( semicolon_index );
         }
         else
         {
-            clog<<"未找到";
+            //clog<<"未找到";
         }
-        clog<<endl;
+        //clog<<endl;
         last = semicolon_index;
     }
     linesplit.push_back(string::npos);
-    clog<<"偏移表中元素数量："<<linesplit.size()<<endl;
+    //clog<<"偏移表中元素数量："<<linesplit.size()<<endl;
     vector<string::size_type>::iterator iter;
     string part="";
     int cul_index, next_index;
@@ -118,7 +129,7 @@ void SylkRecord::parser(string line)
     {
         if (iter==linesplit.begin())
         {
-            clog<<"跳过第一个"<<endl;
+            //clog<<"跳过第一个"<<endl;
             cul_index=*iter;
             continue;
         }
@@ -129,7 +140,7 @@ void SylkRecord::parser(string line)
         if (cul_index==0)
         {
             type_ch=line[0];
-            clog<<"检测到类型为："<<type_ch<<endl;
+            //clog<<"检测到类型为："<<type_ch<<endl;
             //首个字母，代表类型
             switch (type_ch)
             {
@@ -161,7 +172,7 @@ void SylkRecord::parser(string line)
             // |   +- next_index=5;
             //B;X35;Y274;D0
             type_ch = line[cul_index+1];
-            clog<<"位置: "<<cul_index<<" 类型："<<type_ch;
+            //clog<<"位置: "<<cul_index<<" 类型："<<type_ch;
             start_index = cul_index+2;
             value_length = next_index-start_index;
             switch (type_ch)
@@ -169,7 +180,7 @@ void SylkRecord::parser(string line)
             case 'x':
             case 'X':
                 part = line.substr( start_index, value_length );
-                clog <<" 值："<<part;
+                //clog <<" 值："<<part;
                 set_x( str2int( part ) );
                 break;
             case 'y':
@@ -187,3 +198,40 @@ void SylkRecord::parser(string line)
         cul_index=next_index;
     }
 }
+
+void SylkRecord::copy_param(SylkRecord record)
+{
+    clog<<"SylkRecord::copy_param(SylkRecord) 未实现"<<endl;
+    //_type=record.get_type();
+    //set_x(record.get_x());
+    //set_y(record.get_y());
+    //set_value(record.get_value());
+}
+
+string SylkRecord::to_string()
+{
+    /**
+    ID;PWXL;N;E
+    B;X35;Y274;D0
+    C;X1;Y1;K"itemID"
+    E
+    */
+    stringstream ss;
+    if (_type==kSylkRecordTypeSetTable)
+    {
+        ss<<"B;X"<<_x<<";Y"<<_y<<";D0";
+    }
+    else if (_type==kSylkRecordTypeValue)
+    {
+        ss<<"C;X"<<_x<<";Y"<<_y<<";K";
+        //if ()
+    }
+    else
+    {
+        return "";
+    }
+    string ret;
+    ss>>ret;
+    return ret;
+}
+

@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src\W3OMain.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\SylkRecord.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="256" topLine="3" />
+			<Cursor1 position="132" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\SylkFile.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Utils.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1479" topLine="59" />
+			<Cursor1 position="95" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\SylkRecord.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\W3OMain.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4255" topLine="179" />
-		</Cursor>
-	</File>
-	<File name="src\Utils.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="160" topLine="0" />
+			<Cursor1 position="330" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\SylkFile.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="390" topLine="11" />
+			<Cursor1 position="75" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\SylkRecord.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\SylkFile.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="734" topLine="37" />
+			<Cursor1 position="1880" topLine="88" />
+		</Cursor>
+	</File>
+	<File name="src\SylkRecord.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="766" topLine="79" />
+		</Cursor>
+	</File>
+	<File name="src\Utils.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="218" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
