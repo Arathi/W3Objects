@@ -23,6 +23,12 @@ public:
     void save(string filename, bool compress=false);
     void gen_indexs(string field_name="");
 
+    void setTableData(int x, int y, string value);
+    string getTableData(int x, int y);
+
+    int get_x();
+    int get_y();
+
 protected:
 private:
     void init();

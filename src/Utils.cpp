@@ -18,3 +18,44 @@ string int2str(int value)
     sstream>>ret;
     return ret;
 }
+
+int id2int(string idStr)
+{
+    int idInt=0, i;
+    char ch;
+    if (idStr.length()!=4) return 0;
+    for (i=0; i<4; i++)
+    {
+        idInt<<=8;
+        ch = idStr[i];
+        if ( ( ch>='0' && ch<='9' ) ||
+            ( ch>='A' && ch<='Z' ) ||
+            ( ch>='a' && ch<='z' ) )
+        {
+            idInt |= ch;
+        }
+        else return 0;
+    }
+    return idInt;
+}
+
+string int2id(int idInt)
+{
+    string idStr="____";
+    char ch=0;
+    for (int i=0; i<4; i++)
+    {
+        ch = idInt & 0xff;
+        idInt >>= 8;
+        //ch = idStr[i];
+        if ( ( ch>='0' && ch<='9' ) ||
+            ( ch>='A' && ch<='Z' ) ||
+            ( ch>='a' && ch<='z' ) )
+        {
+            idStr[3-i]=ch;
+        }
+        else return "";
+    }
+    return idStr;
+}
+

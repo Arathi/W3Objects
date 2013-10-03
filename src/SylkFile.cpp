@@ -183,3 +183,24 @@ void SylkFile::gen_indexs(string field)
     //for (iter=_id_y_map.begin(); iter!=_id_y_map.end(); iter++)
         //clog<<iter->first<<" => "<<iter->second<<endl;
 }
+
+void SylkFile::setTableData(int x, int y, string value)
+{
+    _table[x][y].set_value(value);
+}
+
+string SylkFile::getTableData(int x, int y)
+{
+    return _table[x][y].get_value();
+}
+
+int SylkFile::get_x()
+{
+    return _x;
+}
+
+int SylkFile::get_y()
+{
+    return _y;
+}
+

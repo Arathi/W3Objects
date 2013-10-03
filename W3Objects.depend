@@ -48,12 +48,18 @@
 1380623302 source:d:\workspace\w3objects\src\textfile.cpp
 	"TextFile.h"
 
-1380624284 d:\workspace\w3objects\src\textfile.h
+1380816373 d:\workspace\w3objects\src\textfile.h
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<map>
+	"ProfileNode.h"
 
 1380727739 source:d:\workspace\w3objects\src\utils.cpp
 	"Utils.h"
 
-1380733854 d:\workspace\w3objects\src\utils.h
+1380814788 d:\workspace\w3objects\src\utils.h
 	<sstream>
 	<iostream>
 
@@ -67,10 +73,10 @@
 
 1380629255 d:\workspace\w3objects\src\w3object.h
 
-1380790343 source:d:\workspace\w3objects\src\sylkfile.cpp
+1380816104 source:d:\workspace\w3objects\src\sylkfile.cpp
 	"SylkFile.h"
 
-1380790290 d:\workspace\w3objects\src\sylkfile.h
+1380816321 d:\workspace\w3objects\src\sylkfile.h
 	<vector>
 	<map>
 	<string>
@@ -91,4 +97,10 @@
 	<fstream>
 	"SylkRecord.h"
 	"SylkFile.h"
+
+1380814674 source:d:\workspace\w3objects\src\profilenode.cpp
+	"ProfileNode.h"
+
+1380816294 d:\workspace\w3objects\src\profilenode.h
+	<string>
 
