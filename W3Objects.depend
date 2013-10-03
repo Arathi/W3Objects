@@ -67,10 +67,10 @@
 
 1380629255 d:\workspace\w3objects\src\w3object.h
 
-1380735035 source:d:\workspace\w3objects\src\sylkfile.cpp
+1380790343 source:d:\workspace\w3objects\src\sylkfile.cpp
 	"SylkFile.h"
 
-1380725691 d:\workspace\w3objects\src\sylkfile.h
+1380790290 d:\workspace\w3objects\src\sylkfile.h
 	<vector>
 	<map>
 	<string>
@@ -86,7 +86,7 @@
 1380735476 source:d:\workspace\w3objects\src\sylkrecord.cpp
 	"SylkRecord.h"
 
-1380734408 source:d:\workspace\w3objects\src\w3omain.cpp
+1380790389 source:d:\workspace\w3objects\src\w3omain.cpp
 	<iostream>
 	<fstream>
 	"SylkRecord.h"

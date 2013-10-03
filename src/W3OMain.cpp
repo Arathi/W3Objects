@@ -13,8 +13,9 @@ int main()
 {
 #ifdef SYLKFILE_UNIT
     SylkFile slk("D:\\TestDir\\mpq\\Units\\AbilityData.slk");
-    slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.slk");
-    //slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.comp.slk", true);
+    //slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.slk");
+    slk.save("D:\\TestDir\\mpq\\UnitsCopy\\AbilityData.comp.slk", true);
+    slk.gen_indexs();
 #endif
 #ifdef SYLKRECORD_UNIT
     SylkRecord record;

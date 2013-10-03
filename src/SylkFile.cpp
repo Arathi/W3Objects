@@ -109,16 +109,15 @@ void SylkFile::save(string filename, bool compress)
         //clog<<"x0="<<x0<<", "
             //<<"dx="<<dx<<endl;
         x = x0;
-        //for (x=1; x<=_x; x+=dx)
         while (true)
         {
-            if (!compress)
+            if ( y%2==0 && compress )
             {
-                if (x>_x) break;
+                if (x<=0) break;
             }
             else
             {
-                if (x<=0) break;
+                if (x>_x) break;
             }
             //clog<<"正在输出("<<x<<","<<y<<")"<<endl;
             SylkRecord record = _table.at(x).at(y);
@@ -143,5 +142,44 @@ void SylkFile::save(string filename, bool compress)
 
 void SylkFile::gen_indexs(string field)
 {
-    //创建索引（如果没有指定名字，则创建entry字段的索引）
+    //首先创建字段名与列号的索引
+    clog<<"正在生成索引..."<<endl;
+    int x, y;
+    string field_name, id;
+    y = 1;
+    if (_field_x_map.size()==0)
+    {
+        for (x=1; x<=_x; x++)
+        {
+            SylkRecord record = _table[x][y];
+            if (record.get_type()!=kSylkRecordTypeValue)
+            {
+                continue;
+            }
+            field_name = record.get_value();
+            _field_x_map[field_name] = x;
+        }
+    }
+
+    //创建ID（一般是第一个字段）索引
+    x = 1;
+    if (_id_y_map.size()==0)
+    {
+        for (y=2; y<=_y; y++)
+        {
+            SylkRecord record = _table[x][y];
+            if (record.get_type()!=kSylkRecordTypeValue)
+            {
+                continue;
+            }
+            id = record.get_value();
+            _id_y_map[id] = y;
+        }
+    }
+
+    //map<string, int>::iterator iter;
+    //for (iter=_field_x_map.begin(); iter!=_field_x_map.end(); iter++)
+        //clog<<iter->first<<" => "<<iter->second<<endl;
+    //for (iter=_id_y_map.begin(); iter!=_id_y_map.end(); iter++)
+        //clog<<iter->first<<" => "<<iter->second<<endl;
 }
