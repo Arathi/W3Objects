@@ -41,7 +41,7 @@ public:
     string get_value_with_quote();
     void set_value(string value);
 
-    void parser(string);
+    void parse(string);
     void copy_param(SylkRecord record);
     string to_string();
 

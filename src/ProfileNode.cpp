@@ -3,6 +3,8 @@
 ProfileNode::ProfileNode()
 {
     //ctor
+    _params.clear();
+    _params.resize(1);//保留第一个
 }
 
 ProfileNode::~ProfileNode()
@@ -10,27 +12,38 @@ ProfileNode::~ProfileNode()
     //dtor
 }
 
-vector<string> ProfileNode::split_value(string value_line)
+void ProfileNode::add_param(ProfileParam param)
 {
-    vector<string> values;
-    int i, startAt=0, endAt, quoteStartAt, line_length=value_line.length();
-    for (i=0; i<line_length; i++)
-    {
-
-    }
-}
-
-void ProfileNode::addParam(string key, string value)
-{
+    string key = param.get_name();
     int index=_param_index_map[key];
     if (index==0)
     {
-        //插入新的值
-        _values.push_back(value);
-        index = _values.size() - 1;
+        _params.push_back(param);
+        index = _params.size()-1;
+        clog<<"新插入ID: "<<index<<endl;
+        _param_index_map[key]=index;
     }
     else
     {
-        _values[index]=value;
+        _params.at(index)=param;
     }
 }
+
+string ProfileNode::get_param(string key, int value_index)
+{
+    int object_index=_param_index_map[key];
+    if (object_index==0) return "";
+    return _params.at(object_index).get_value(value_index);
+}
+
+void ProfileNode::set_object_id(string id)
+{
+    _object_id_string=id;
+    _object_id=id2int(id);
+}
+
+int ProfileNode::get_object_id()
+{
+    return _object_id;
+}
+

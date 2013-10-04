@@ -38,7 +38,7 @@ void SylkFile::load(string filename)
     while ( getline(fin, line) )
     {
         SylkRecord record;
-        record.parser(line);
+        record.parse(line);
         cul_x=record.get_x();
         cul_y=record.get_y();
         int type=record.get_type();
@@ -176,12 +176,6 @@ void SylkFile::gen_indexs(string field)
             _id_y_map[id] = y;
         }
     }
-
-    //map<string, int>::iterator iter;
-    //for (iter=_field_x_map.begin(); iter!=_field_x_map.end(); iter++)
-        //clog<<iter->first<<" => "<<iter->second<<endl;
-    //for (iter=_id_y_map.begin(); iter!=_id_y_map.end(); iter++)
-        //clog<<iter->first<<" => "<<iter->second<<endl;
 }
 
 void SylkFile::setTableData(int x, int y, string value)

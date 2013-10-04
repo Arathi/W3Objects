@@ -87,7 +87,7 @@ int SylkRecord::get_type()
     return _type;
 }
 
-void SylkRecord::parser(string line)
+void SylkRecord::parse(string line)
 {
     vector<string::size_type> linesplit;
     string::size_type last=0,semicolon_index=0;
