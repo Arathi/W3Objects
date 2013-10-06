@@ -9,7 +9,11 @@ W3Objects是用于操作《魔兽争霸III：冰封王座》的物体信息的�
 * __SylkRecord__ SYLK中有4个组成部分：文件头、大小区、数据区、结束符，每一行、每个单元格中的数据，都用一个SylkRecord表示。
 
 ## TXT文件
-暂缺
+通过Profile相关类来实现TXT文件的读和写，Profile相关类如下：
+
+* __TextFile__ 封装了整个文本文件，由诺干个ProfileNode构成；
+* __ProfileNode__ 封装了文本文件中对某个物体的描述，由它的名字以及诺干个ProfileParam构成；
+* __ProfileParam__ 封装了物体的某个属性，属性由属性名称和多个值构成。
 
 ## W3_文件
 暂缺
