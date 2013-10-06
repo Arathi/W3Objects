@@ -29,6 +29,13 @@ void ProfileNode::add_param(ProfileParam param)
     }
 }
 
+void ProfileNode::add_param(string param_str)
+{
+    ProfileParam param;
+    param.parse(param_str);
+    add_param(param);
+}
+
 string ProfileNode::get_param(string key, int value_index)
 {
     int object_index=_param_index_map[key];
@@ -45,5 +52,20 @@ void ProfileNode::set_object_id(string id)
 int ProfileNode::get_object_id()
 {
     return _object_id;
+}
+
+string ProfileNode::to_string(string eol)
+{
+    string text="";
+    text+="["+_object_id_string+"]"+eol;
+    //vector<ProfileParam>::iterator iter;
+    int i=0, size=_params.size();
+    //for ( iter=_params.begin(); iter!=_params.end(); iter++ )
+    for (i=1; i<size; i++)
+    {
+        //text+=iter->to_string()+eol;
+        text+=_params[i].to_string()+eol;
+    }
+    return text;
 }
 

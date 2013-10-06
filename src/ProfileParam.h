@@ -16,6 +16,7 @@ public:
     string get_name();
     string get_value(int index);
     bool parse(string values);
+    string to_string();
 protected:
 private:
     string _name;

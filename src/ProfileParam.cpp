@@ -86,3 +86,16 @@ bool ProfileParam::parse(string value_line)
     }
     return size>0;
 }
+
+string ProfileParam::to_string()
+{
+    string text="";
+    text+=_name+"=";
+    vector<string>::iterator iter;
+    for ( iter=_value_list.begin(); iter!=_value_list.end(); iter++ )
+    {
+        if ( iter!=_value_list.begin() ) text+=",";
+        text+=*iter;
+    }
+    return text;
+}
