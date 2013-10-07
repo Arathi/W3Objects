@@ -15,6 +15,8 @@ public:
     ProfileNode();
     virtual ~ProfileNode();
 
+    void init(string id);
+
     void set_object_id(string id);
     int get_object_id();
 
@@ -22,7 +24,10 @@ public:
     void add_param(ProfileParam param);
     void add_param(string param_str);
     string get_param(string key, int index);
+    vector< ProfileParam > get_params();
     vector<string> split_value(string value_line);
+    void clear();
+    bool merge(ProfileNode other);
 
     string to_string(string eol="\n");
 protected:

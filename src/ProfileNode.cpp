@@ -25,6 +25,7 @@ void ProfileNode::add_param(ProfileParam param)
     }
     else
     {
+        clog<<"覆盖已有ID："<<index<<endl;
         _params.at(index)=param;
     }
 }
@@ -49,6 +50,22 @@ void ProfileNode::set_object_id(string id)
     _object_id=id2int(id);
 }
 
+void ProfileNode::clear()
+{
+    _object_id=0;
+    _object_id_string="";
+    _params.clear();
+    _param_index_map.clear();
+    ProfileParam tmp;
+    _params.push_back(tmp);
+}
+
+void ProfileNode::init(string objId)
+{
+    clear();
+    set_object_id(objId);
+}
+
 int ProfileNode::get_object_id()
 {
     return _object_id;
@@ -67,5 +84,24 @@ string ProfileNode::to_string(string eol)
         text+=_params[i].to_string()+eol;
     }
     return text;
+}
+
+vector<ProfileParam> ProfileNode::get_params()
+{
+    return _params;
+}
+
+bool ProfileNode::merge(ProfileNode other)
+{
+    //如果ID都不相符，拒绝合并
+    if (other.get_object_id()!=_object_id)
+        return false;
+    vector<ProfileParam> other_params=other.get_params();
+    int i, size=other_params.size();
+    for (i=1; i<size; i++)
+    {
+        add_param( other_params[i] );
+    }
+    return true;
 }
 

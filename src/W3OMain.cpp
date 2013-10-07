@@ -40,21 +40,27 @@ int main()
     }
 #endif // IDCONVERT_UNIT
 #ifdef PROFILE_NODE_UNIT
-    ProfileNode node;
+    ProfileNode node, node2;
     //ProfileParam param;
     //param.parse("Art=ReplaceableTextures\\CommandButtons\\BTNReplenishManaOn.blp");
     //param.parse("Buttonpos=0,2");
     //cout<<param.to_string()<<endl;
-    node.set_object_id("Ucrl");
+    //node.set_object_id("Ucrl");
+    node.init("Ucrl");
     node.add_param("Art=ReplaceableTextures\\CommandButtons\\BTNHeroCryptLord.blp");
     node.add_param("Buttonpos=0,1");
     node.add_param("RequiresCount=3");
     node.add_param("Requires=");
-    node.add_param("Requires1=unp1");
-    node.add_param("Requires2=unp2");
-    node.add_param("Specialart=Objects\\Spawnmodels\\Undead\\UndeadLargeDeathExplode\\UndeadLargeDeathExplode.mdl");
-    node.add_param("Attachmentanimprops=medium");
-    node.add_param("ScoreScreenIcon=UI\\Glues\\ScoreScreen\\scorescreen-hero-cryptlord.blp");
+
+    node2.init("Ucrl");
+    node2.add_param("Requires1=unp1");
+    node2.add_param("Requires2=unp2");
+    node2.add_param("Specialart=Objects\\Spawnmodels\\Undead\\UndeadLargeDeathExplode\\UndeadLargeDeathExplode.mdl");
+    node2.add_param("Attachmentanimprops=medium");
+    node2.add_param("ScoreScreenIcon=UI\\Glues\\ScoreScreen\\scorescreen-hero-cryptlord.blp");
+    //cout<<node.to_string()<<endl;
+    //cout<<node2.to_string()<<endl;
+    node.merge(node2);
     cout<<node.to_string()<<endl;
 #endif // PROFILE_NODE_UNIT
     return 0;

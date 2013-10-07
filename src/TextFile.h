@@ -17,6 +17,7 @@ public:
     TextFile();
     virtual ~TextFile();
 
+    void load(string filename);
     void add_profile(ProfileNode profile);
 protected:
 private:

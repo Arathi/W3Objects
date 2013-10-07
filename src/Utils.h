@@ -12,4 +12,6 @@ string int2str(int value);
 int id2int(string idStr);
 string int2id(int idInt);
 
+string getEndOfLine(string context);
+
 #endif // UTILS_H_INCLUDED

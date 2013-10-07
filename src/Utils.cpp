@@ -59,3 +59,8 @@ string int2id(int idInt)
     return idStr;
 }
 
+string getEndOfLine(string context)
+{
+    return "\n";
+}
+
