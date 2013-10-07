@@ -5,13 +5,14 @@
 #include "SylkFile.h"
 #include "ProfileNode.h"
 #include "ProfileParam.h"
+#include "TextFile.h"
 
 using namespace std;
 
 //#define SYLKRECORD_UNIT
 //#define SYLKFILE_UNIT
 //#define IDCONVERT_UNIT
-#define PROFILE_NODE_UNIT
+//#define PROFILE_NODE_UNIT
 #define PROFILE_UNIT
 
 int main()
@@ -63,6 +64,11 @@ int main()
     node.merge(node2);
     cout<<node.to_string()<<endl;
 #endif // PROFILE_NODE_UNIT
+#ifdef PROFILE_UNIT
+    TextFile profile;
+    profile.load("D:\\TestDir\\mpq\\Units_126\\ItemFunc.txt");
+    profile.save("D:\\TestDir\\mpq\\UnitsCopy\\ItemFunc.txt");
+#endif // PROFILE_UNIT
     return 0;
 }
 

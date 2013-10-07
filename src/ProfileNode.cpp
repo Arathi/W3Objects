@@ -14,6 +14,8 @@ ProfileNode::~ProfileNode()
 
 void ProfileNode::add_param(ProfileParam param)
 {
+    //拒绝添加非法的Param
+    if (param.get_name()=="") return;
     string key = param.get_name();
     int index=_param_index_map[key];
     if (index==0)

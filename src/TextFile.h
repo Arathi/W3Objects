@@ -18,9 +18,11 @@ public:
     virtual ~TextFile();
 
     void load(string filename);
+    void save(string filename);
     void add_profile(ProfileNode profile);
 protected:
 private:
+    string _filename;
     vector<ProfileNode> _profile_nodes;
     map<int, int> _id_profile_map;
 };
