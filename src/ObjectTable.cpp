@@ -9,3 +9,9 @@ ObjectTable::~ObjectTable()
 {
     //dtor
 }
+
+void ObjectTable::load(ifstream &fin)
+{
+    //
+    clog<<"Load a object table"<<endl;
+}

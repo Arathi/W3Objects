@@ -11,7 +11,7 @@ using namespace std;
 
 //#define SYLKRECORD_UNIT
 //#define SYLKFILE_UNIT
-//#define IDCONVERT_UNIT
+#define CONVERT_UNIT
 //#define PROFILE_PARAM_UNIT
 //#define PROFILE_NODE_UNIT
 //#define PROFILE_UNIT
@@ -33,14 +33,16 @@ int main()
     cout<<"Y="<<record.get_y()<<endl;
     cout<<"Value="<<record.get_value()<<endl;
 #endif
-#ifdef IDCONVERT_UNIT
-    SylkFile slk("D:\\TestDir\\mpq\\Units\\AbilityData.slk");
-    int i, line = slk.get_y();
-    for (i=2; i<=line; i++)
-    {
-        string idStr=slk.getTableData(1, i);
-        clog << idStr << " => " << id2int(idStr) <<endl;
-    }
+#ifdef CONVERT_UNIT
+    //SylkFile slk("D:\\TestDir\\mpq\\Units\\AbilityData.slk");
+    //int i, line = slk.get_y();
+    //for (i=2; i<=line; i++)
+    //{
+    //    string idStr=slk.getTableData(1, i);
+    //    clog << idStr << " => " << id2int(idStr) <<endl;
+    //}
+    char bytes[]={1,0,0,0};
+    convertInt(bytes);
 #endif // IDCONVERT_UNIT
 #ifdef PROFILE_PARAM_UNIT
     ProfileParam param;

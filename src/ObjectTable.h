@@ -9,6 +9,8 @@ class ObjectTable
 public:
     ObjectTable();
     virtual ~ObjectTable();
+
+    void load(ifstream &fin);
 protected:
 private:
     int _object_amount;

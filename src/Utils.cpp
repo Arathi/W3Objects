@@ -64,3 +64,18 @@ string getEndOfLine(string context)
     return "\n";
 }
 
+int convertInt(char* bytes, int size)
+{
+    int i, value=0;
+    memcpy(&value, bytes, size);
+    clog<<"Convert ";
+    clog<<hex;
+    for (i=0; i<size; i++)
+    {
+        clog<<setw(2)<<setfill('0')<<(int)(bytes[i])<<" ";
+    }
+    clog<<dec;
+    clog<<" to "<<value<<endl;
+    return value;
+}
+
