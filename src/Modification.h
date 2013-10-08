@@ -1,6 +1,8 @@
 #ifndef MODIFICATION_H
 #define MODIFICATION_H
 
+#include "Common.h"
+#include "Value.h"
 
 class Modification
 {

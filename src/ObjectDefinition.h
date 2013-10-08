@@ -1,6 +1,8 @@
 #ifndef OBJECTDEFINITION_H
 #define OBJECTDEFINITION_H
 
+#include "Common.h"
+#include "Modification.h"
 
 class ObjectDefinition
 {

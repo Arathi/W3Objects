@@ -1,6 +1,8 @@
 #ifndef IW3FILE_H_INCLUDED
 #define IW3FILE_H_INCLUDED
 
+#include "Common.h"
+
 class IW3File
 {
 public:

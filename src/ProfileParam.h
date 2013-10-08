@@ -1,11 +1,7 @@
 #ifndef PROFILEPARAM_H
 #define PROFILEPARAM_H
 
-#include <string>
-#include <vector>
-#include <iostream>
-
-using namespace std;
+#include "Common.h"
 
 class ProfileParam
 {

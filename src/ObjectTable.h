@@ -1,6 +1,8 @@
 #ifndef OBJECTTABLE_H
 #define OBJECTTABLE_H
 
+#include "Common.h"
+#include "ObjectDefinition.h"
 
 class ObjectTable
 {

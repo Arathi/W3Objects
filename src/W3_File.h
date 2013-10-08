@@ -2,6 +2,7 @@
 #define W3_FILE_H
 
 #include "IW3File.h"
+#include "ObjectTable.h"
 
 class W3_File : public IW3File
 {
