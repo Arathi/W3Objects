@@ -8,10 +8,11 @@
 #include <map>
 
 #include "ProfileNode.h"
+#include "IW3File.h"
 
 using namespace std;
 
-class TextFile
+class TextFile : public IW3File
 {
 public:
     TextFile();

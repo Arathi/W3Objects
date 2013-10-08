@@ -12,8 +12,10 @@ using namespace std;
 //#define SYLKRECORD_UNIT
 //#define SYLKFILE_UNIT
 //#define IDCONVERT_UNIT
+//#define PROFILE_PARAM_UNIT
 //#define PROFILE_NODE_UNIT
-#define PROFILE_UNIT
+//#define PROFILE_UNIT
+#define W3OFILE_UNIT
 
 int main()
 {
@@ -40,13 +42,14 @@ int main()
         clog << idStr << " => " << id2int(idStr) <<endl;
     }
 #endif // IDCONVERT_UNIT
+#ifdef PROFILE_PARAM_UNIT
+    ProfileParam param;
+    param.parse("Art=ReplaceableTextures\\CommandButtons\\BTNReplenishManaOn.blp");
+    param.parse("Buttonpos=0,2");
+    cout<<param.to_string()<<endl;
+#endif // PROFILE_PARAM_UNIT
 #ifdef PROFILE_NODE_UNIT
     ProfileNode node, node2;
-    //ProfileParam param;
-    //param.parse("Art=ReplaceableTextures\\CommandButtons\\BTNReplenishManaOn.blp");
-    //param.parse("Buttonpos=0,2");
-    //cout<<param.to_string()<<endl;
-    //node.set_object_id("Ucrl");
     node.init("Ucrl");
     node.add_param("Art=ReplaceableTextures\\CommandButtons\\BTNHeroCryptLord.blp");
     node.add_param("Buttonpos=0,1");
@@ -69,6 +72,8 @@ int main()
     profile.load("D:\\TestDir\\mpq\\Units_126\\ItemFunc.txt");
     profile.save("D:\\TestDir\\mpq\\UnitsCopy\\ItemFunc.txt");
 #endif // PROFILE_UNIT
+#ifdef W3OFILE_UNIT
+
+#endif // W3OFile_UNIT
     return 0;
 }
-

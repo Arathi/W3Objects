@@ -7,11 +7,12 @@
 #include <cstring>
 #include <fstream>
 
+#include "IW3File.h"
 #include "SylkRecord.h"
 
 using namespace std;
 
-class SylkFile
+class SylkFile : public IW3File
 {
 public:
     SylkFile();
