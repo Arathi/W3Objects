@@ -17,6 +17,7 @@ string int2id(int idInt);
 string getEndOfLine(string context);
 
 int convertInt(char* bytes, int size=4);
+int convertId(char* bytes, int size=4);
 float convertReal(char* bytes, int size=4);
 string convertString(char* bytes);
 

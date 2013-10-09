@@ -21,6 +21,8 @@ private:
     int _version;
     ObjectTable _original;
     ObjectTable _custom;
+
+    string _filename;
 };
 
 #endif // W3_FILE_H

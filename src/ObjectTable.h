@@ -10,7 +10,7 @@ public:
     ObjectTable();
     virtual ~ObjectTable();
 
-    void load(ifstream &fin);
+    void load(ifstream &fin, char objectType, string name="untitled");
 protected:
 private:
     int _object_amount;

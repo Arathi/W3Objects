@@ -10,7 +10,7 @@ public:
     ObjectDefinition();
     virtual ~ObjectDefinition();
 
-    void load(ifstream &fin);
+    void load(ifstream &fin, char);
 protected:
 private:
     int _original_id;

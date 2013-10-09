@@ -67,22 +67,23 @@ int convertInt(char* bytes, int size)
 {
     int value=0;
     memcpy(&value, bytes, size);
-    /*
-    clog<<"Convert ";
-    clog<<hex;
-    for (int i=0; i<size; i++)
-    {
-        clog<<setw(2)<<setfill('0')<<(int)(bytes[i])<<" ";
-    }
-    clog<<dec;
-    clog<<" to "<<value<<endl;
-    */
     return value;
+}
+
+int convertId(char* bytes, int size)
+{
+    int i;
+    char byte_reverse[4];
+    for (i=0; i<4; i++)
+    {
+        byte_reverse[i]=bytes[3-i];
+    }
+    return convertInt(byte_reverse);
 }
 
 float convertReal(char* bytes, int size)
 {
-    int i, value=0;
+    int value=0;
     memcpy(&value, bytes, size);
     return value;
 }

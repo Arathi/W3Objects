@@ -10,9 +10,9 @@ ObjectTable::~ObjectTable()
     //dtor
 }
 
-void ObjectTable::load(ifstream &fin)
+void ObjectTable::load(ifstream &fin, char objectType, string name)
 {
-    clog<<"Load a object table"<<endl;
+    clog<<"Load \'"<<objectType<<"\' table: "<<name<<endl;
     char tmp[4];
     fin.read(tmp, 4);
     int index;
@@ -21,7 +21,7 @@ void ObjectTable::load(ifstream &fin)
     for (index=0; index<_object_amount; index++)
     {
         ObjectDefinition object;
-        object.load(fin);
+        object.load(fin, objectType);
         _objects.push_back(object);
     }
 }
