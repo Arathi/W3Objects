@@ -47,7 +47,6 @@ string int2id(int idInt)
     {
         ch = idInt & 0xff;
         idInt >>= 8;
-        //ch = idStr[i];
         if ( ( ch>='0' && ch<='9' ) ||
             ( ch>='A' && ch<='Z' ) ||
             ( ch>='a' && ch<='z' ) )
@@ -66,16 +65,30 @@ string getEndOfLine(string context)
 
 int convertInt(char* bytes, int size)
 {
-    int i, value=0;
+    int value=0;
     memcpy(&value, bytes, size);
+    /*
     clog<<"Convert ";
     clog<<hex;
-    for (i=0; i<size; i++)
+    for (int i=0; i<size; i++)
     {
         clog<<setw(2)<<setfill('0')<<(int)(bytes[i])<<" ";
     }
     clog<<dec;
     clog<<" to "<<value<<endl;
+    */
     return value;
 }
 
+float convertReal(char* bytes, int size)
+{
+    int i, value=0;
+    memcpy(&value, bytes, size);
+    return value;
+}
+
+string convertString(char* bytes)
+{
+    string value=bytes;
+    return value;
+}

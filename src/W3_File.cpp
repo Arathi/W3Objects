@@ -16,8 +16,14 @@ void W3_File::load(string filename)
     char id[4];
     fin.read(id, 4);
     _version = convertInt(id);
-    clog<<"°æ±¾ºÅ"<<_version<<endl;
+    //clog<<"°æ±¾ºÅ"<<_version<<endl;
     //¶ÁÈ¡ _version
     _original.load(fin);
     _custom.load(fin);
+}
+
+void W3_File::save(string filename)
+{
+    ofstream fout(filename.c_str(), ios::binary | ios::out);
+    //fout.write(_version, 4);
 }

@@ -9,6 +9,8 @@ class ObjectDefinition
 public:
     ObjectDefinition();
     virtual ~ObjectDefinition();
+
+    void load(ifstream &fin);
 protected:
 private:
     int _original_id;

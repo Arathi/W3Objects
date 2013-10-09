@@ -6,12 +6,13 @@
 #include "ProfileNode.h"
 #include "ProfileParam.h"
 #include "TextFile.h"
+#include "W3_File.h"
 
 using namespace std;
 
 //#define SYLKRECORD_UNIT
 //#define SYLKFILE_UNIT
-#define CONVERT_UNIT
+//#define CONVERT_UNIT
 //#define PROFILE_PARAM_UNIT
 //#define PROFILE_NODE_UNIT
 //#define PROFILE_UNIT
@@ -75,7 +76,8 @@ int main()
     profile.save("D:\\TestDir\\mpq\\UnitsCopy\\ItemFunc.txt");
 #endif // PROFILE_UNIT
 #ifdef W3OFILE_UNIT
-
+    W3_File w3a;
+    w3a.load("D:\\TestDir\\mpq\\war3map.w3a");
 #endif // W3OFile_UNIT
     return 0;
 }

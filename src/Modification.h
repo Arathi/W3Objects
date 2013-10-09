@@ -9,6 +9,8 @@ class Modification
 public:
     Modification();
     virtual ~Modification();
+
+    void load(ifstream &fin, bool useOptionalInts=false);
 protected:
 private:
     int _id;

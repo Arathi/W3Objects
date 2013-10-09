@@ -15,6 +15,7 @@ public:
     virtual ~W3_File();
 
     void load(string);
+    void save(string);
 protected:
 private:
     int _version;
