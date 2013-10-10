@@ -3,6 +3,7 @@
 
 #include "Common.h"
 #include "Modification.h"
+#include "ObjectIdentity.h"
 
 class ObjectDefinition
 {
@@ -11,14 +12,11 @@ public:
     virtual ~ObjectDefinition();
 
     void load(ifstream &fin, char);
+    void save(ofstream &fout);
 protected:
 private:
-    int _original_id;
-    int _new_id;
-
-    string _original_id_str;
-    string _new_id_str;
-
+    ObjectIdentity _original_id;
+    ObjectIdentity _new_id;
     int _modification_amount;
     vector<Modification> _modifications;
 };

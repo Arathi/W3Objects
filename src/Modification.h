@@ -11,6 +11,7 @@ public:
     virtual ~Modification();
 
     void load(ifstream &fin, bool useOptionalInts=false);
+    void save(ofstream &fout, bool useOptionalInts=false);
 protected:
 private:
     int _id;

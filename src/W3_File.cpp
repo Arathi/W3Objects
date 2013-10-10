@@ -28,5 +28,5 @@ void W3_File::load(string filename)
 void W3_File::save(string filename)
 {
     ofstream fout(filename.c_str(), ios::binary | ios::out);
-    //fout.write(_version, 4);
+    fout.write((char *)&_version, 4);
 }

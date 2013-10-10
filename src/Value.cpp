@@ -36,3 +36,20 @@ void Value::set_value(int type, ifstream &fin)
         break;
     }
 }
+
+void Value::put_value(ofstream &fout)
+{
+    switch (_type)
+    {
+    case 0: //Integer
+        fout.write( (char*)&_integer, 4 );
+        break;
+    case 1: //Real
+    case 2: //Unreal
+        fout.write( (char*)&_real, 4 );
+        break;
+    case 3: //String
+        fout.write( _string.c_str(), _string.length() );
+        break;
+    }
+}

@@ -28,3 +28,8 @@ void Modification::load(ifstream &fin, bool useOptionalInts)
     fin.read(id, 4);
     _end = convertInt(id);
 }
+
+void Modification::save(ofstream &fout, bool useOptionalInts)
+{
+    //fout.write((char *));
+}

@@ -11,6 +11,7 @@ public:
     virtual ~ObjectTable();
 
     void load(ifstream &fin, char objectType, string name="untitled");
+    void save(ifstream &fin);
 protected:
 private:
     int _object_amount;
