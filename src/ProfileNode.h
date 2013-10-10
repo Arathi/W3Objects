@@ -1,12 +1,9 @@
 #ifndef PROFILENODE_H
 #define PROFILENODE_H
 
-#include <string>
-#include <map>
-#include <vector>
-#include <iostream>
 #include "Utils.h"
 #include "ProfileParam.h"
+#include "ObjectIdentity.h"
 using namespace std;
 
 class ProfileNode
@@ -32,8 +29,7 @@ public:
     string to_string(string eol="\n");
 protected:
 private:
-    int _object_id;
-    string _object_id_string;
+    ObjectIdentity _object_id;
     vector< ProfileParam > _params;
     map<string, int> _param_index_map;
 };

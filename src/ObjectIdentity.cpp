@@ -10,7 +10,23 @@ ObjectIdentity::~ObjectIdentity()
     //dtor
 }
 
-void ObjectIdentity::set_id(char *id)
+int ObjectIdentity::get_code()
+{
+    return _code;
+}
+
+string ObjectIdentity::get_id()
+{
+    return _id;
+}
+
+void ObjectIdentity::clear()
+{
+    _id="";
+    _code=0;
+}
+
+void ObjectIdentity::set_id(const char *id)
 {
     int i;
     _id="";

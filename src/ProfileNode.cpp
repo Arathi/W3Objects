@@ -48,14 +48,16 @@ string ProfileNode::get_param(string key, int value_index)
 
 void ProfileNode::set_object_id(string id)
 {
-    _object_id_string=id;
-    _object_id=id2int(id);
+    //_object_id_string=id;
+    //_object_id=id2int(id);
+    _object_id.set_id(id.c_str());
 }
 
 void ProfileNode::clear()
 {
-    _object_id=0;
-    _object_id_string="";
+    //_object_id=0;
+    //_object_id_string="";
+    _object_id.clear();
     _params.clear();
     _param_index_map.clear();
     ProfileParam tmp;
@@ -70,19 +72,16 @@ void ProfileNode::init(string objId)
 
 int ProfileNode::get_object_id()
 {
-    return _object_id;
+    return _object_id.get_code();
 }
 
 string ProfileNode::to_string(string eol)
 {
     string text="";
-    text+="["+_object_id_string+"]"+eol;
-    //vector<ProfileParam>::iterator iter;
+    text+="["+_object_id.get_id()+"]"+eol;
     int i=0, size=_params.size();
-    //for ( iter=_params.begin(); iter!=_params.end(); iter++ )
     for (i=1; i<size; i++)
     {
-        //text+=iter->to_string()+eol;
         text+=_params[i].to_string()+eol;
     }
     return text;
@@ -96,7 +95,7 @@ vector<ProfileParam> ProfileNode::get_params()
 bool ProfileNode::merge(ProfileNode other)
 {
     //如果ID都不相符，拒绝合并
-    if (other.get_object_id()!=_object_id)
+    if (other.get_object_id()!=get_object_id())
         return false;
     vector<ProfileParam> other_params=other.get_params();
     int i, size=other_params.size();

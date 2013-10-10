@@ -75,9 +75,11 @@ bool ProfileParam::parse(string value_line)
             }
         }
     }
-    value=value_line.substr( startAt );
-    _value_list.push_back( value );
-
+    if (findEQ)
+    {
+        value=value_line.substr( startAt );
+        _value_list.push_back( value );
+    }
     size=_value_list.size();
     clog<<"取到"<<size<<"个值，如下："<<endl;
     for (i=0; i<size; i++)

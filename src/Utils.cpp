@@ -63,14 +63,14 @@ string getEndOfLine(string context)
     return "\n";
 }
 
-int convertInt(char* bytes, int size)
+int convertInt(const char* bytes, int size)
 {
     int value=0;
     memcpy(&value, bytes, size);
     return value;
 }
 
-int convertId(char* bytes, int size)
+int convertId(const char* bytes, int size)
 {
     int i;
     char byte_reverse[4];
@@ -81,14 +81,14 @@ int convertId(char* bytes, int size)
     return convertInt(byte_reverse);
 }
 
-float convertReal(char* bytes, int size)
+float convertReal(const char* bytes, int size)
 {
     int value=0;
     memcpy(&value, bytes, size);
     return value;
 }
 
-string convertString(char* bytes)
+string convertString(const char* bytes)
 {
     string value=bytes;
     return value;

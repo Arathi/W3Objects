@@ -16,10 +16,10 @@ string int2id(int idInt);
 
 string getEndOfLine(string context);
 
-int convertInt(char* bytes, int size=4);
-int convertId(char* bytes, int size=4);
-float convertReal(char* bytes, int size=4);
-string convertString(char* bytes);
+int convertInt(const char* bytes, int size=4);
+int convertId(const char* bytes, int size=4);
+float convertReal(const char* bytes, int size=4);
+string convertString(const char* bytes);
 
 //double
 
