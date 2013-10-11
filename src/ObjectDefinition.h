@@ -12,7 +12,7 @@ public:
     virtual ~ObjectDefinition();
 
     void load(ifstream &fin, char);
-    void save(ofstream &fout);
+    void save(ofstream &fout, char);
 protected:
 private:
     ObjectIdentity _original_id;

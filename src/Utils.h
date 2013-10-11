@@ -16,8 +16,9 @@ string int2id(int idInt);
 
 string getEndOfLine(string context);
 
-int convertInt(const char* bytes, int size=4);
-int convertId(const char* bytes, int size=4);
+int convertInt(const char* bytes, bool bigEndian=false);
+int reverseEndian(int origin);
+//int convertId(const char* bytes, int size=4);
 float convertReal(const char* bytes, int size=4);
 string convertString(const char* bytes);
 

@@ -3,6 +3,7 @@
 
 #include "Common.h"
 #include "Value.h"
+#include "ObjectIdentity.h"
 
 class Modification
 {
@@ -14,8 +15,9 @@ public:
     void save(ofstream &fout, bool useOptionalInts=false);
 protected:
 private:
-    int _id;
-    string _id_str;
+    //int _id;
+    //string _id_str;
+    ObjectIdentity _id;
 
     int _type;
     int _level;

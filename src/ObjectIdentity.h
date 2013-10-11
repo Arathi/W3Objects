@@ -17,6 +17,7 @@ public:
     void set_id(const char *id);
     //void set_id(string id);
     void set_id(ifstream &fin);
+    void put_id(ofstream &fout);
 protected:
 private:
     int _code;

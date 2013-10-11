@@ -49,7 +49,7 @@ void Value::put_value(ofstream &fout)
         fout.write( (char*)&_real, 4 );
         break;
     case 3: //String
-        fout.write( _string.c_str(), _string.length() );
+        fout.write( _string.c_str(), _string.length()+1 );
         break;
     }
 }

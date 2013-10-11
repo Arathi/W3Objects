@@ -15,8 +15,8 @@ using namespace std;
 //#define CONVERT_UNIT
 //#define PROFILE_PARAM_UNIT
 //#define PROFILE_NODE_UNIT
-#define PROFILE_UNIT //读写TXT功能
-//#define W3OFILE_UNIT //读W3*功能
+//#define PROFILE_UNIT //读写TXT功能
+#define W3OFILE_UNIT //读写W3*功能
 
 int main()
 {
@@ -78,6 +78,7 @@ int main()
 #ifdef W3OFILE_UNIT
     W3_File w3a;
     w3a.load("D:\\TestDir\\mpq\\war3map.w3a");
+    w3a.save("D:\\TestDir\\mpq\\war3map_copy.w3a");
 #endif // W3OFile_UNIT
     return 0;
 }

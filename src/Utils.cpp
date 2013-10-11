@@ -63,13 +63,42 @@ string getEndOfLine(string context)
     return "\n";
 }
 
-int convertInt(const char* bytes, int size)
+int convertInt(const char* obytes, bool bigEndian)
 {
-    int value=0;
-    memcpy(&value, bytes, size);
+    int i, value=0;
+    const char *bytes;
+    char lbytes[4];
+    if (bigEndian)
+    {
+        for (i=0; i<4; i++)
+        {
+            lbytes[i]=obytes[3-i];
+        }
+        bytes=lbytes;
+    }
+    else
+    {
+        bytes=obytes;
+    }
+    memcpy(&value, bytes, 4);
     return value;
 }
 
+int reverseEndian(int origin)
+{
+    int i, reversed=0;
+    char mod;
+    for (i=0; i<4; i++)
+    {
+        mod = origin&0xFF;
+        reversed <<= 8;
+        reversed |= mod;
+        origin >>= 8;
+    }
+    return reversed;
+}
+
+/*
 int convertId(const char* bytes, int size)
 {
     int i;
@@ -80,7 +109,7 @@ int convertId(const char* bytes, int size)
     }
     return convertInt(byte_reverse);
 }
-
+*/
 float convertReal(const char* bytes, int size)
 {
     int value=0;
