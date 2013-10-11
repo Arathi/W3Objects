@@ -21,7 +21,9 @@ public:
 
     void load(string filename);
     bool initTable(int x, int y);
-    void save(string filename, bool compress=false);
+
+    //void save(string filename, bool compress=false);
+    void save(string filename);
     void gen_indexs(string field_name="");
 
     void setTableData(int x, int y, string value);
@@ -40,6 +42,8 @@ private:
 
     int _x;
     int _y;
+
+    bool _compress;
 };
 
 #endif // SYLKFILE_H

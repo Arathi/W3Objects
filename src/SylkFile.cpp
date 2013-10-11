@@ -86,13 +86,13 @@ bool SylkFile::initTable(int x, int y)
     return true;
 }
 
-void SylkFile::save(string filename, bool compress)
+void SylkFile::save(string filename)
 {
     //B;X35;Y274;D0
     //C;X1;Y1;K"itemID"
     clog<<"开始保存slk到"<<filename<<endl;
     string file_text="", temp;
-    string eol=compress?"\r":"\n";
+    string eol=_compress?"\r":"\n";
     int x, y, dx, x0, lastx=0, lasty=0;
     temp = "ID;PWXL;N;E"+eol;
     file_text += temp;
@@ -104,14 +104,14 @@ void SylkFile::save(string filename, bool compress)
     //循环将记录值写入
     for (y=1; y<=_y; y++)
     {
-        x0 = ( y%2==0 && compress ) ? _x : 1;
-        dx = ( y%2==0 && compress ) ? -1 : 1;
+        x0 = ( y%2==0 && _compress ) ? _x : 1;
+        dx = ( y%2==0 && _compress ) ? -1 : 1;
         //clog<<"x0="<<x0<<", "
             //<<"dx="<<dx<<endl;
         x = x0;
         while (true)
         {
-            if ( y%2==0 && compress )
+            if ( y%2==0 && _compress )
             {
                 if (x<=0) break;
             }

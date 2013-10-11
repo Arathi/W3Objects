@@ -122,7 +122,7 @@ void SylkRecord::parse(string line)
     //clog<<"偏移表中元素数量："<<linesplit.size()<<endl;
     vector<string::size_type>::iterator iter;
     string part="";
-    int cul_index, next_index;
+    int cul_index=0, next_index;
     int start_index, value_length;
     char type_ch;
     for (iter=linesplit.begin(); iter!=linesplit.end(); iter++)

@@ -16,7 +16,18 @@ W3Objects是用于操作《魔兽争霸III：冰封王座》的物体信息的�
 * __ProfileParam__ 封装了物体的某个属性，属性由属性名称和多个值构成。
 
 ## W3_文件
-暂缺
+通过W3O相关类来实现w3u、w3a等文件的读写，其中包括：
+
+* __W3\_File__ 封装了整个w3*物体文件的信息，由两个ObjectTable构成；
+* __ObjectTable__ 封装了物体表结构，由数个ObjectDefinition构成；
+* __ObjectDefinition__ 封装了物体的定义信息，由物体编号以及数个Modification；
+* __Modification__ 封装了单个数据改动的结构，包括修改编号、值类型、level、data_ptr、改动值、结束符构成；
+* __Value__ 封装了最基本的值结构，由int、float、string构成。
+
+## 工具类
+
+* __IW3File__ 文件接口；
+* __ObjectIdentity__ 物体的ID，使用在ProfileNode、ObjectDefinition、Modification中。
 
 ## 在计划中功能：
 
