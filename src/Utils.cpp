@@ -112,7 +112,7 @@ int convertId(const char* bytes, int size)
 */
 float convertReal(const char* bytes, int size)
 {
-    int value=0;
+    float value=0;
     memcpy(&value, bytes, size);
     return value;
 }
