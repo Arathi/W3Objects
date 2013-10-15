@@ -16,6 +16,7 @@ public:
 
     void set_object_id(string id);
     int get_object_id();
+    string get_object_str();
 
     //void add_param(string key, string value);
     void add_param(ProfileParam param);

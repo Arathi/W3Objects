@@ -3,6 +3,7 @@
 ProfileNode::ProfileNode()
 {
     //ctor
+    _object_id.clear();
     _params.clear();
     _params.resize(1);//保留第一个
 }
@@ -15,7 +16,12 @@ ProfileNode::~ProfileNode()
 void ProfileNode::add_param(ProfileParam param)
 {
     //拒绝添加非法的Param
-    if (param.get_name()=="") return;
+    string name=param.get_name();
+    if (name=="")
+    {
+        cerr<<""<<endl;
+        return;
+    }
     string key = param.get_name();
     int index=_param_index_map[key];
     if (index==0)
@@ -74,6 +80,10 @@ int ProfileNode::get_object_id()
 {
     return _object_id.get_code();
 }
+string ProfileNode::get_object_str()
+{
+    return _object_id.get_id();
+}
 
 string ProfileNode::to_string(string eol)
 {
@@ -96,7 +106,9 @@ bool ProfileNode::merge(ProfileNode other)
 {
     //如果ID都不相符，拒绝合并
     if (other.get_object_id()!=get_object_id())
+    {
         return false;
+    }
     vector<ProfileParam> other_params=other.get_params();
     int i, size=other_params.size();
     for (i=1; i<size; i++)

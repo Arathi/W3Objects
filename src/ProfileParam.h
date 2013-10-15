@@ -2,6 +2,7 @@
 #define PROFILEPARAM_H
 
 #include "Common.h"
+#include "Utils.h"
 
 class ProfileParam
 {

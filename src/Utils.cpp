@@ -122,3 +122,29 @@ string convertString(const char* bytes)
     string value=bytes;
     return value;
 }
+
+string& lTrim(string &ss)
+{
+    //string::iterator p=find_if(ss.begin(),ss.end(),not1(ptr_fun(isspace)));
+    string::iterator p;
+    for (p=ss.begin(); p!=ss.end(); p++)
+        if (!isspace(*p)) break;
+    ss.erase(ss.begin(),p);
+    return ss;
+}
+
+string& rTrim(string &ss)
+{
+    //string::reverse_iterator  p=find_if(ss.rbegin(),ss.rend(),not1(ptr_fun(isspace)));
+    string::reverse_iterator p;
+    for (p=ss.rbegin(); p!=ss.rend(); p++)
+        if (!isspace(*p)) break;
+    ss.erase(p.base(),ss.end());
+    return ss;
+}
+
+string& trim(string &st)
+{
+    lTrim(rTrim(st));
+    return st;
+}

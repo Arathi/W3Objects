@@ -11,7 +11,7 @@
 //#define PROFILE_PARAM_UNIT
 //#define PROFILE_NODE_UNIT
 //#define PROFILE_UNIT //读写TXT功能
-#define W3OFILE_UNIT //读写W3*功能
+//#define W3OFILE_UNIT //读写W3*功能
 
 int UnitMain()
 {
@@ -39,8 +39,11 @@ int UnitMain()
     //    string idStr=slk.getTableData(1, i);
     //    clog << idStr << " => " << id2int(idStr) <<endl;
     //}
-    char bytes[]={1,0,0,0};
-    convertInt(bytes);
+    //char bytes[]={1,0,0,0};
+    //convertInt(bytes);
+    string trimStr="    //townhall tier 1 dependency";
+    lTrim(trimStr);
+    clog<<trimStr<<endl;
 #endif // IDCONVERT_UNIT
 
 #ifdef PROFILE_PARAM_UNIT

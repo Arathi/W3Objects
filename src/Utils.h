@@ -5,6 +5,11 @@
 #include <iostream>
 #include <cstring>
 #include <iomanip>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <cctype>
 
 using namespace std;
 
@@ -21,6 +26,10 @@ int reverseEndian(int origin);
 //int convertId(const char* bytes, int size=4);
 float convertReal(const char* bytes, int size=4);
 string convertString(const char* bytes);
+
+string& lTrim(string &ss);
+string& rTrim(string &ss);
+string& trim(string &st);
 
 //double
 

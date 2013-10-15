@@ -2,7 +2,9 @@
 
 TextFile::TextFile()
 {
-    //ctor
+    //0号占位
+    ProfileNode nullnode;
+    _profile_nodes.push_back(nullnode);
 }
 
 TextFile::~TextFile()
@@ -12,7 +14,8 @@ TextFile::~TextFile()
 
 void TextFile::load(string filename)
 {
-    //TODO 小心空行和注释
+    clog<<"Loading profile "<<filename<<" ..."<<endl;
+    //TODO 小心前后导空格、空行和注释行
     ifstream fin(filename.c_str());
     string line, eol;
     eol = getEndOfLine("");
@@ -24,6 +27,7 @@ void TextFile::load(string filename)
             //ID，建立新的
             add_profile(node);
             string objId=line.substr(1,4);
+            clog<<"获取到新ID: \'"<<objId<<"\'"<<endl;
             node.init(objId);
         }
         else
@@ -51,5 +55,21 @@ void TextFile::save(string filename)
 
 void TextFile::add_profile(ProfileNode node)
 {
-    _profile_nodes.push_back(node);
+    //TODO 合并改造
+    //首先在_id_profile_map中查找该ID
+    int id=node.get_object_id();
+    if (id==0) return;
+    int index = _id_profile_map[id];
+    if ( index ==0 )
+    {
+        _profile_nodes.push_back(node);
+        index = _profile_nodes.size()-1;
+        _id_profile_map[id]=index;
+        clog<<"不存在"<<node.get_object_str()<<"("<<id<<")"<<", 新插入索引"<<index<<endl;
+    }
+    else
+    {
+        clog<<"已存在"<<node.get_object_str()<<", 索引号为"<<index<<endl;
+        _profile_nodes.at(index).merge(node);
+    }
 }

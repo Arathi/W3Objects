@@ -36,10 +36,36 @@ int main(int argc, char **argv)
 
     //UnitMain();
     //--------------以下是Ability读取的逻辑--------------
+    /*
+    CampaignAbilityFunc.txt
+    campaignabilitystrings.txt
+    CommonAbilityFunc.txt
+    CommonAbilityStrings.txt
+    HumanAbilityFunc.txt
+    HumanAbilityStrings.txt
+    ItemAbilityFunc.txt
+    ItemAbilityStrings.txt
+    NeutralAbilityFunc.txt
+    NeutralAbilityStrings.txt
+    NightElfAbilityFunc.txt
+    NightElfAbilityStrings.txt
+    OrcAbilityFunc.txt
+    OrcAbilityStrings.txt
+    UndeadAbilityFunc.txt
+    UndeadAbilityStrings.txt
+    */
+
     Ability ability;
     SylkFile slk;
+    TextFile txt;
     slk.load(basePath+"AbilityData.slk");
+
+    txt.load(basePath+"\\Units_126\\"+"ItemAbilityFunc.txt");
+    txt.load(basePath+"\\Units_126\\"+"ItemAbilityStrings.txt");
+    txt.save("D:\\TestDir\\mpq\\UnitsCopy\\ItemAbility.txt");
+
     ability.loadSylk(slk);
 
+    //UnitMain();
     return 0;
 }

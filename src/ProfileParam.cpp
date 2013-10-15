@@ -29,6 +29,9 @@ bool ProfileParam::parse(string value_line)
     string::size_type line_length=value_line.length(), i, startAt=0, endAt, quoteStartAt=string::npos, size;
     bool findEQ=false;
     //clog<<"LENGTH="<<line_length<<endl;
+    //TODO 去除句首空格
+    string line_trimed=trim(value_line);
+    //TODO 过滤注释
     for (i=0; i<line_length; i++)
     {
         //0123456789012
@@ -81,11 +84,11 @@ bool ProfileParam::parse(string value_line)
         _value_list.push_back( value );
     }
     size=_value_list.size();
-    clog<<"取到"<<size<<"个值，如下："<<endl;
-    for (i=0; i<size; i++)
-    {
-        clog<<_name<<"["<<i<<"]="<<_value_list[i]<<endl;
-    }
+    //clog<<"取到"<<size<<"个值，如下："<<endl;
+    //for (i=0; i<size; i++)
+    //{
+        //clog<<_name<<"["<<i<<"]="<<_value_list[i]<<endl;
+    //}
     return size>0;
 }
 
