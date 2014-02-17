@@ -22,6 +22,7 @@ void ProfileNode::add_param(ProfileParam param)
         cerr<<""<<endl;
         return;
     }
+    //TODO 键不区分大小写
     string key = param.get_name();
     int index=_param_index_map[key];
     if (index==0)
@@ -47,6 +48,7 @@ void ProfileNode::add_param(string param_str)
 
 string ProfileNode::get_param(string key, int value_index)
 {
+    //TODO 键不区分大小写，因此key要全部转换为小写再比较
     int object_index=_param_index_map[key];
     if (object_index==0) return "";
     return _params.at(object_index).get_value(value_index);

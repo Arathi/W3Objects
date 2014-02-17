@@ -72,6 +72,8 @@ void SylkFile::load(string filename)
             break;
         }
     }
+
+    gen_indexs();
 }
 
 bool SylkFile::initTable(int x, int y)
@@ -138,6 +140,22 @@ void SylkFile::save(string filename)
 
     ofstream fout( filename.c_str() );
     fout<<file_text;
+}
+
+int SylkFile::get_field_order(string field_name)
+{
+    if (_field_x_map.size()==0) gen_indexs();
+    int x = 0;
+    x = _field_x_map[field_name];
+    return x;
+}
+
+int SylkFile::get_id_order(string id)
+{
+    if (_id_y_map.size()==0) gen_indexs();
+    int y = 0;
+    y = _id_y_map[id];
+    return y;
 }
 
 void SylkFile::gen_indexs(string field)

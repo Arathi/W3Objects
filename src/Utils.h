@@ -31,6 +31,8 @@ string& lTrim(string &ss);
 string& rTrim(string &ss);
 string& trim(string &st);
 
+vector<string> split(string str,string pattern);
+
 //double
 
 #endif // UTILS_H_INCLUDED

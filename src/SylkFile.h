@@ -29,6 +29,9 @@ public:
     void setTableData(int x, int y, string value);
     string getTableData(int x, int y);
 
+    int get_field_order(string field_name);
+    int get_id_order(string id);
+
     int get_x();
     int get_y();
 
@@ -37,8 +40,8 @@ private:
     void init();
     vector< vector<SylkRecord> > _table;
     //map<int, string> _y_id_map;
-    map<string, int> _id_y_map;
     map<string, int> _field_x_map;
+    map<string, int> _id_y_map;
 
     int _x;
     int _y;

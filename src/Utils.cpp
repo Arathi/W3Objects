@@ -148,3 +148,22 @@ string& trim(string &st)
     lTrim(rTrim(st));
     return st;
 }
+
+vector<string> split(string str,string pattern)
+{
+    string::size_type pos;
+    vector<string> result;
+    str+=pattern;//扩展字符串以方便操作
+    int size=str.size();
+    for(int i=0; i<size; i++)
+    {
+        pos=str.find(pattern,i);
+        if(pos<size)
+        {
+            string s=str.substr(i,pos-i);
+            result.push_back(s);
+            i=pos+pattern.size()-1;
+        }
+    }
+    return result;
+}

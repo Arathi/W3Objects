@@ -8,6 +8,7 @@ class ObjectIdentity
 {
 public:
     ObjectIdentity();
+    //ObjectIdentity(string idStr); //TODO 添加一个构造器，根据字符串ID构造一个ObjectIdentity
     virtual ~ObjectIdentity();
 
     int get_code();

@@ -55,7 +55,6 @@ void TextFile::save(string filename)
 
 void TextFile::add_profile(ProfileNode node)
 {
-    //TODO 合并改造
     //首先在_id_profile_map中查找该ID
     int id=node.get_object_id();
     if (id==0) return;
@@ -72,4 +71,19 @@ void TextFile::add_profile(ProfileNode node)
         clog<<"已存在"<<node.get_object_str()<<", 索引号为"<<index<<endl;
         _profile_nodes.at(index).merge(node);
     }
+}
+
+string TextFile::get_profile(string id, string param, int index)
+{
+    ObjectIdentity objid;
+    objid.set_id(id.c_str());
+    int id_code = objid.get_code();
+    map<int,int>::const_iterator iter;
+    iter = _id_profile_map.find( id_code );
+    if (iter != _id_profile_map.end() ) //找到
+    {
+        ProfileNode node = _profile_nodes[ _id_profile_map[ id_code ] ];
+        return node.get_param( param, index );
+    }
+    return "";
 }
